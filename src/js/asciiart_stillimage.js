@@ -11,21 +11,15 @@ var gfx;
 
 var ascii_arr;
 
-/*
-  Let's load the example images first.
-*/
-function preload() {
-  imageAscii = loadImage('src/assets/CROPPED-DSC_4999.jpg');
-}
-
 function setup() {
-  gfx = createGraphics(asciiart_width, asciiart_height);
+  gfx = createGraphics();
   gfx.pixelDensity(1);
   myAsciiArt = new AsciiArt(this);
-  convertImage();
 }
 
 function convertImage() {
+  gfx.background(0);
+  gfx.resizeCanvas(asciiart_width, asciiart_height);
   gfx.image(imageAscii, 0, 0, gfx.width, gfx.height);
   gfx.filter(POSTERIZE, 3);
   ascii_arr = myAsciiArt.convert(gfx);
@@ -36,7 +30,7 @@ function convertImage() {
 var dataImage;
 var recharge = false;
 
-document.getElementById('file-image').onchange = function () {
+document.getElementById('file-image').onchange = function() {
   if (this.files && this.files.length) {
     var fr = new FileReader();
     fr.onload = function () {
@@ -48,7 +42,7 @@ document.getElementById('file-image').onchange = function () {
   }
 }
 
-function reloadImage() {
+document.getElementById('btn-reloadImage').onclick = function() {
   if (recharge && dataImage) {
     recharge = false;
     loadImage(dataImage,
