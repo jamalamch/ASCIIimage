@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="src/css/shett.css">
+    <script src="src/js/p5.min.js"></script>
+    <script src="src/js/p5.asciiart.js"></script>
+    <script src="src/js/asciiart_stillimage.js"></script>
+</head>
+
+<body>
+
+    <head>
+        <center>
+            <h1>Converter image to String Ascii</h1>
+        </center>
+    </head>
+
+    <div class="content">
+        <div class="block row">
+            <div class="col">
+                <pre class="inblock" id="image-string"></pre>
+            </div>
+            <div class="col">
+                <img class="inblock" id="image-origin" src="src/assets/CROPPED-DSC_4999.jpg" alt="myImage">
+                <div>
+
+                    <!-- <label for="file-image" class="custom-file-upload">
+                        Custom Upload
+                      </label> -->
+                    <input id="file-image" type="file" accept="image/png, image/jpeg"/>
+                    <br>
+                    <label for="ascii-width">ascii width </label>
+                    <input type="number" id="ascii-width" min="10" max="200" value="122"><br>
+                    <label for="ascii-height"> ascii height </label>
+                    <input type="number" id="ascii-height" min="10" max="200" value="64">
+                    <br><br>
+                    <button> generated ASCII </button><br>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
