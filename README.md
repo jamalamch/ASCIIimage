@@ -3,7 +3,7 @@
 
 <center> <h1> ASCII ART CREATOR </h1></center>
 
- ## ==> [ASCIIimage ](https://htmlpreview.github.io/?https://github.com/jamalamch/ASCIIimage/blob/master/index.html) <==
+ ## ==> [ASCIIimage ](https://jamalamch.github.io/ASCIIimage/) <==
 
 Ascii Art creator allows you to convert images to  monochrome Ascii Art
 
