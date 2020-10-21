@@ -41,8 +41,24 @@ document.getElementById('file-image').onchange = function() {
     fr.readAsDataURL(this.files[0]);
   }
 }
-
+document.getElementById('ascii-width').onchange = function() {
+    recharge = true;
+    var value = this.value;
+    value = (value<10)?10:value;
+    value = (value>200)?200:value;
+    asciiart_width = value;
+}
+document.getElementById('ascii-height').onchange = function() {
+  recharge = true;
+  var value = this.value;
+  value = (value<10)?10:value;
+  value = (value>200)?200:value;
+  asciiart_height = value;
+}
 document.getElementById('btn-reloadImage').onclick = function() {
+  asciiart_width = document.getElementById('ascii-width').value;
+  asciiart_height = document.getElementById('ascii-height').value;
+  console.log(asciiart_width+" "+asciiart_height);
   if (recharge && dataImage) {
     recharge = false;
     loadImage(dataImage,
@@ -56,5 +72,15 @@ document.getElementById('btn-reloadImage').onclick = function() {
       }
     );
   }
+}
+document.getElementById('copy-code').onclick = function(){
+  var copyText = document.getElementById("image-string");
+  var str = copyText.innerText;
+  const el = document.createElement('textarea');
+  el.value = str;
+  document.body.appendChild(el);
+  el.select();
+  document.execCommand('copy');
+  document.body.removeChild(el);
 }
 
