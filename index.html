@@ -4,10 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <title>ASCIIimage CREATOR</title>
+    <link rel="icon" href="favicon.ico">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel="stylesheet" href="src/css/shett.css">
-    <script src="src/js/p5.min.js"></script>
-    <script src="src/js/p5.asciiart.js"></script>
+    <link rel="stylesheet" type="text/css" href="src/css/shett.css">
+    <script src="src/js/p5.min.js" defer></script>
+    <script src="src/js/p5.asciiart.js" defer></script>
     <script src="src/js/asciiart_stillimage.js" defer></script>
 </head>
 
@@ -28,18 +29,16 @@
     <div class="content">
         <div class="block row">
             <div class="col">
+                <div class="zomme" >
+                    <label for="">🔍</label>
+                    <input type="range" id="image-zome" min="0.1" max="1.1" step="0.05" value="0.7"><br>
+                </div>
                 <pre class="inblock" id="image-string"></pre>
                 <button id="copy-code">COPY CODE</button>
-                <div>
-                    <br>
-                </div>
             </div>
             <div class="col">
                 <img class="inblock" id="image-origin" src="src/assets/CROPPED-DSC_4999.jpg" alt="myImage">
                 <div>
-                    <!-- <label for="file-image" class="custom-file-upload">
-                        Custom Upload
-                      </label> -->
                     <input id="file-image" type="file" accept="image/png, image/jpeg" />
                     <br>
                     <label for="ascii-width">ascii width </label>

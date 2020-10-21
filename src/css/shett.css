@@ -3,9 +3,9 @@ body {
     color: white;
 }
 
-pre {
+#image-string {
     font-family: Consolas, 'Courier New', monospace;
-    font-size: 0.7vw;
+    /* font-size: 0.7vw; */
 }
 
 .content {
@@ -68,6 +68,15 @@ p{
     margin-top: 15px;
     margin-left: auto;
     margin-right: auto;
+}
+label{
+    padding: 6px 10px;
+    margin: 3px;
+}
+.zomme{
+    display: flex;
+    margin: auto;
+    width: min-content;
 }
 /* input[type="file"] {
      display: none; 

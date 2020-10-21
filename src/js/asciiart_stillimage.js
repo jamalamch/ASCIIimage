@@ -19,6 +19,7 @@ function preload() {
   imageAscii = loadImage('src/assets/CROPPED-DSC_4999.jpg');
   document.getElementById('ascii-width').value = 122;
   document.getElementById('ascii-height').value = 64;
+  document.getElementById('image-string').style.fontSize = document.getElementById('image-zome').value+"vw"
 }
 
 function setup() {
@@ -92,4 +93,7 @@ document.getElementById('copy-code').onclick = function(){
   document.execCommand('copy');
   document.body.removeChild(el);
 }
-
+document.getElementById('image-zome').onchange = function(){
+  var value = this.value;
+  document.getElementById('image-string').style.fontSize = value+"vw"
+}
