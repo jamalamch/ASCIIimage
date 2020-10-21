@@ -7,14 +7,25 @@ var asciiart_width = 122; var asciiart_height = 64;
 
 var imageAscii;
 
+var dataImage;
+
+var recharge = false;
+
 var gfx;
 
 var ascii_arr;
+
+function preload() {
+  imageAscii = loadImage('src/assets/CROPPED-DSC_4999.jpg');
+  document.getElementById('ascii-width').value = 122;
+  document.getElementById('ascii-height').value = 64;
+}
 
 function setup() {
   gfx = createGraphics();
   gfx.pixelDensity(1);
   myAsciiArt = new AsciiArt(this);
+  convertImage();
 }
 
 function convertImage() {
@@ -26,9 +37,6 @@ function convertImage() {
 
   document.getElementById('image-string').innerHTML = myAsciiArt.convert2dArrayToString(ascii_arr);
 }
-
-var dataImage;
-var recharge = false;
 
 document.getElementById('file-image').onchange = function() {
   if (this.files && this.files.length) {
@@ -56,23 +64,24 @@ document.getElementById('ascii-height').onchange = function() {
   asciiart_height = value;
 }
 document.getElementById('btn-reloadImage').onclick = function() {
-  asciiart_width = document.getElementById('ascii-width').value;
-  asciiart_height = document.getElementById('ascii-height').value;
-  console.log(asciiart_width+" "+asciiart_height);
   if (recharge && dataImage) {
     recharge = false;
     loadImage(dataImage,
       img => {
         imageAscii = img;
-        convertImage()
+        dataImage = null;
+        convertImage();
       }
       ,
       function () {
         console.log("not load");
       }
     );
+  }else if(recharge && imageAscii) {
+    convertImage();
   }
 }
+
 document.getElementById('copy-code').onclick = function(){
   var copyText = document.getElementById("image-string");
   var str = copyText.innerText;
