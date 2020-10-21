@@ -3,7 +3,6 @@
 
 <center> <h1> ASCII ART CREATOR </h1></center>
 
- ## ==> [ASCIIimage ](https://htmlpreview.github.io/?https://github.com/jamalamch/ASCIIimage/blob/master/index.html) <==
 
 Ascii Art creator allows you to convert images to  monochrome Ascii Art
 
@@ -19,5 +18,3 @@ Ascii Art creator allows you to convert images to  monochrome Ascii Art
     animated (sequential) ASCII art pieceMost recognizable work by the group
     is "Deep ASCII" - an ASCII version the famous pornographic film "Deep
     Throat" from 1972.
-
-
