@@ -97,3 +97,17 @@ document.getElementById('image-zome').onchange = function(){
   var value = this.value;
   document.getElementById('image-string').style.fontSize = value+"vw"
 }
+
+function download(text, filename, type) {
+  var file = new Blob([text], {type: type});
+  var a = document.createElement("a");
+  a.href = URL.createObjectURL(file);
+  a.setAttribute("download", filename);     
+  a.click();
+}
+
+document.getElementById('text-file').onclick = function(){
+  var copyText = document.getElementById("image-string");
+  var str = copyText.innerText;
+  download(str,'ASCIICODE.txt', 'text/plain');
+}

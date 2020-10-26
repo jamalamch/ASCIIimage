@@ -57,7 +57,7 @@ button:hover{
     color: #555;
     padding: 8px 18px;
 }
-#copy-code:hover{
+.mauto:hover{
     margin: auto;
 }
 input[type="number"]{
