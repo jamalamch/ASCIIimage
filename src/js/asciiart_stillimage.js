@@ -3,7 +3,7 @@ var myAsciiArt;
 /*
   The size of generated ASCII graphics expressed in characters and lines.
 */
-var asciiart_width = 122; var asciiart_height = 64;
+var asciiart_width = 122/2; var asciiart_height = 64/2;
 
 var imageAscii;
 
@@ -16,9 +16,13 @@ var gfx;
 var ascii_arr;
 
 function preload() {
-  imageAscii = loadImage('src/assets/CROPPED-DSC_4999.jpg');
-  document.getElementById('ascii-width').value = 122;
-  document.getElementById('ascii-height').value = 64;
+  imageAscii = loadImage('src/assets/CROPPED-DSC_4999.jpg',img =>{
+      document.getElementById('imageD-width').value = img.width;
+      document.getElementById('imageD-height').value = img.height;
+  });
+  document.getElementById('ascii-width').value = asciiart_width;
+  document.getElementById('ascii-height').value = asciiart_height;
+  document.getElementById('imageD-name').value = 'myAsciiArt';
   document.getElementById('image-string').style.fontSize = document.getElementById('image-zome').value+"vw"
 }
 
@@ -27,6 +31,7 @@ function setup() {
   gfx.pixelDensity(1);
   myAsciiArt = new AsciiArt(this);
   convertImage();
+  noLoop();
 }
 
 function convertImage() {
@@ -110,4 +115,29 @@ document.getElementById('text-file').onclick = function(){
   var copyText = document.getElementById("image-string");
   var str = copyText.innerText;
   download(str,'ASCIICODE.txt', 'text/plain');
+}
+
+function hideImageDForm(){
+  document.getElementById('id01').style.display='none';
+}
+function showImageDForm(){
+  document.getElementById('id01').style.display='block';
+}
+
+document.getElementById('image-file').onclick = function(){
+  showImageDForm();
+}
+document.getElementById('dowload-image').onclick = function(){
+
+  var imageDwidth = document.getElementById('imageD-width').value ;
+  var imageDheight = document.getElementById('imageD-height').value ;
+  var imageDname = document.getElementById('imageD-name').value;
+
+  img = createGraphics(imageDwidth, imageDheight); 
+  img.textAlign(CENTER, CENTER); img.textFont('monospace', 8); img.textStyle(NORMAL);
+  img.noStroke(); img.fill(255);
+  myAsciiArt.typeArray2d(ascii_arr, img, 0, 0, imageDwidth, imageDheight);
+  save(img, imageDname+'.jpg');
+
+  hideImageDForm();
 }

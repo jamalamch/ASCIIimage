@@ -5,7 +5,6 @@ body {
 
 #image-string {
     font-family: Consolas, 'Courier New', monospace;
-    /* font-size: 0.7vw; */
 }
 
 .content {
@@ -40,7 +39,7 @@ body {
 }
 
 .p5Canvas{
-    display: none;
+    /* display: none; */
 }
 button, input{
     border: 2px solid white;
@@ -78,15 +77,46 @@ label{
     margin: auto;
     width: min-content;
 }
-/* input[type="file"] {
-     display: none; 
-}
-.custom-file-upload {
-    border: 1px solid #ccc;
-    display: inline-block;
-    padding: 6px 12px;
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    overflow: auto; /* Enable scroll if needed */
+    color: black;
+    padding-top: 50px;
+  }
+  
+  /* Modal Content/Box */
+  .modal-content {
+    position: relative;
+    background-color: white;
+    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    padding: 15px;
+    outline: 2px solid white;
+    outline-offset: 5px;
+    width: 350px; /* Could be more or less, depending on screen size */
+  }
+  
+  /* The Modal Close Button (x) */
+  .close {
+    position: absolute;
+    right: -30px;
+    top: -50px;
+    font-size: 40px;
+    font-weight: bold;
+    color: #f1f1f1;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #f44336;
     cursor: pointer;
-} */
+  }
+  
 @media only screen and (max-width: 500px) {
     .row {
         display: block;
