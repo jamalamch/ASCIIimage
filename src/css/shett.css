@@ -39,7 +39,7 @@ body {
 }
 
 .p5Canvas{
-    /* display: none; */
+    display: none;
 }
 button, input{
     border: 2px solid white;
